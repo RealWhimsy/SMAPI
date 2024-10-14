@@ -31,7 +31,7 @@ namespace StardewModdingAPI.Framework.Rendering
             if (tile == null)
                 return;
 
-            if (!this.m_tileSheetTextures.TryGetValue(tile.TileSheet, out Texture2D tileSheetTexture) || tileSheetTexture.IsDisposed)
+            if (!this.m_tileSheetTextures.TryGetValue(tile.TileSheet, out Texture2D tileSheetTextureLookup) || tileSheetTextureLookup.IsDisposed)
                 return;
                 
             xTile.Dimensions.Rectangle tileImageBounds = tile.TileSheet.GetTileImageBounds(tile.TileIndex);
