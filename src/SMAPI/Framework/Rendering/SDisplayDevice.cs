@@ -30,6 +30,10 @@ namespace StardewModdingAPI.Framework.Rendering
             // identical to XnaDisplayDevice
             if (tile == null)
                 return;
+
+            if (!this.m_tileSheetTextures.TryGetValue(tile.TileSheet, out Texture2D tileSheetTexture) || tileSheetTexture.IsDisposed)
+                return;
+                
             xTile.Dimensions.Rectangle tileImageBounds = tile.TileSheet.GetTileImageBounds(tile.TileIndex);
             Texture2D tileSheetTexture = this.m_tileSheetTextures[tile.TileSheet];
             if (tileSheetTexture.IsDisposed)
